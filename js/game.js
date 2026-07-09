@@ -81,6 +81,9 @@ const Game = (() => {
         if (state.phase !== 'decision') return;
         state.phase = 'feedback';
         state.total++;
+        
+        // Immediately stop the prompt audio to prevent overlap
+        AudioEngine.stopWord(); 
 
         const q = state.queue[state.qi];
         const isCorrect = (dir === state.answerDir);
@@ -197,16 +200,35 @@ const Game = (() => {
         UI.showScreen('title');
     };
 
+    const TRACK_NAMES = [
+        "1. Kuching Waterfront",
+        "2. Jalan Masjid Jamek",
+        "3. Jam City Samarahan",
+        "4. Sematan Highway",
+        "5. Ultimate Pan Borneo (Audio only)"
+    ];
+
     document.getElementById('btn-level-select').onclick = () => {
         const list = document.getElementById('level-list');
-        list.innerHTML = '';
-        for (let i = 1; i <= 5; i++) {
+        list.innerHTML = ''; // Clear old buttons
+        
+        // Build new buttons using your custom track names
+        TRACK_NAMES.forEach((trackName, index) => {
+            const levelId = index + 1;
             const btn = document.createElement('button');
             btn.className = 'btn';
-            btn.textContent = i === 5 ? 'Level 5 (Audio Only)' : `Level ${i}`;
-            btn.onclick = () => initGame(i);
+            
+            // Add a special elite class to Level 5 to make it stand out (optional styling)
+            if (levelId === 5) {
+                btn.style.color = '#FF3B3B'; // Neon red for the final boss level
+                btn.style.borderColor = '#FF3B3B';
+            }
+            
+            btn.textContent = trackName;
+            btn.onclick = () => initGame(levelId);
             list.appendChild(btn);
-        }
+        });
+        
         UI.showScreen('levels');
     };
 
@@ -240,6 +262,8 @@ const Game = (() => {
         if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') handleAnswer('right');
     });
 
+
+    
     let startX = null;
     document.getElementById('gameCanvas').addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
     document.getElementById('gameCanvas').addEventListener('touchend', e => {

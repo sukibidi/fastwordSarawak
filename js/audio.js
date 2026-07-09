@@ -182,27 +182,34 @@ window.AudioEngine = (() => {
         });
     }
 
+   // Replace the return block in js/audio.js with this:
     return {
+        stopWord: () => {
+            if (wordPlayer) {
+                wordPlayer.pause();
+                wordPlayer.currentTime = 0;
+            }
+        },
         playWord: (src) => {
             if (!src) return;
             playAudioFile(wordPlayer, src, 'Word');
         },
-        playFeedbackSfx: (isCorrect) => {
+        playFeedbackSfx: (isCorrect, delayMs = 300) => {
             const src = isCorrect ? 'audio/sfx/feedback_correct.wav' : 'audio/sfx/feedback_wrong.wav';
             const fallbackTone = isCorrect
                 ? [1040, 0.16, 'triangle', 0.035]
                 : [420, 0.18, 'sawtooth', 0.03];
             if (feedbackSfxPlayer) {
-                playAudioFile(feedbackSfxPlayer, src, 'Feedback SFX', fallbackTone);
+                setTimeout(() => playAudioFile(feedbackSfxPlayer, src, 'Feedback SFX', fallbackTone), delayMs);
             }
         },
-        playFeedbackVoice: (pool) => {
+        playFeedbackVoice: (pool, delayMs = 300) => {
             if (!pool || pool.length === 0) return null;
             const item = pool[Math.floor(Math.random() * pool.length)];
             if (!item) return null;
             const voiceSrc = item.voiceSrc || item.src || item.audioSrc || '';
             if (feedbackPlayer) {
-                playAudioFile(feedbackPlayer, voiceSrc, 'Feedback');
+                setTimeout(() => playAudioFile(feedbackPlayer, voiceSrc, 'Feedback'), delayMs);
             }
             return item.text;
         },
@@ -220,41 +227,33 @@ window.AudioEngine = (() => {
         startBackground: () => {
             const ctx = ensureAudioContext();
             if (!ctx || backgroundActive) return;
-
             bgGain = ctx.createGain();
             bgGain.gain.value = 0.0001;
             bgGain.connect(masterGain || ctx.destination);
-
             bgFilter = ctx.createBiquadFilter();
             bgFilter.type = 'lowpass';
             bgFilter.frequency.value = 1100;
             bgFilter.Q.value = 0.7;
             bgFilter.connect(bgGain);
-
             bgOsc1 = ctx.createOscillator();
             bgOsc1.type = 'sine';
             bgOsc1.frequency.value = 220;
             bgOsc1.connect(bgFilter);
-
             bgOsc2 = ctx.createOscillator();
             bgOsc2.type = 'triangle';
             bgOsc2.frequency.value = 330;
             bgOsc2.connect(bgFilter);
-
             bgLfo = ctx.createOscillator();
             bgLfo.type = 'sine';
             bgLfo.frequency.value = 0.12;
-
             bgLfoGain = ctx.createGain();
             bgLfoGain.gain.value = 40;
             bgLfo.connect(bgLfoGain);
             bgLfoGain.connect(bgOsc1.frequency);
             bgLfoGain.connect(bgOsc2.frequency);
-
             bgOsc1.start();
             bgOsc2.start();
             bgLfo.start();
-
             bgGain.gain.setTargetAtTime(0.035, ctx.currentTime, 0.25);
             backgroundActive = true;
         },
@@ -267,4 +266,5 @@ window.AudioEngine = (() => {
         toggleMute: () => setMuted(!isMuted),
         isMuted: () => isMuted
     };
+    
 })();
