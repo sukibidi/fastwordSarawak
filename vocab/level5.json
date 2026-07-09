@@ -1,0 +1,19 @@
+{
+  "id": 5,
+  "name": "Ultimate Pan Borneo",
+  "setting": "Midnight",
+  "speed": 1.2,
+  "audioOnly": true,
+  "vocab": [
+    { "q": "Ngantok", "a": "Sleepy", "wrong": "Awake" },
+    { "q": "Sitok", "a": "Here", "wrong": "There", "audioSrc": "audio/words/sitok.mp3" },
+    { "q": "Sinun", "a": "There", "wrong": "Here", "audioSrc": "audio/words/sinun.mp3" },
+    { "q": "Kamek", "a": "I / Me", "wrong": "You", "audioSrc": "audio/words/kamek.mp3" },
+    { "q": "Nyaman", "a": "Delicious or Comfortable", "wrong": "Dear", "audioSrc": "audio/words/nyaman.mp3" },
+    { "q": "Sik", "a": "No / Not", "wrong": "Yes", "audioSrc": "audio/words/sik.mp3" },
+    { "q": "Tok", "a": "This one", "wrong": "Grandpa", "audioSrc": "audio/words/tok.mp3" },
+    { "q": "Kamah", "a": "Dirty", "wrong": "Tent", "audioSrc": "audio/words/kamah.mp3" },
+    { "q": "Kelak", "a": "Later", "wrong": "Now", "audioSrc": "audio/words/kelak.mp3" },
+    { "q": "Juak", "a": "Also", "wrong": "Jug", "audioSrc": "audio/words/juak.mp3" }
+  ]
+}

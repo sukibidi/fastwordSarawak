@@ -1,0 +1,19 @@
+{
+  "id": 4,
+  "name": "Sematan Highway",
+  "setting": "Daytime",
+  "speed": 1.2,
+  "audioOnly": false,
+  "vocab": [
+    { "q": "Ngantok", "a": "Sleepy", "wrong": "Awake", "audioSrc": "audio/words/ngantok.mp3" },
+    { "q": "Sitok", "a": "Here", "wrong": "There", "audioSrc": "audio/words/sitok.mp3" },
+    { "q": "Sinun", "a": "There", "wrong": "Here", "audioSrc": "audio/words/sinun.mp3" },
+    { "q": "Kamek", "a": "I / Me", "wrong": "You", "audioSrc": "audio/words/kamek.mp3" },
+    { "q": "Kitak", "a": "You", "wrong": "I / Me", "audioSrc": "audio/words/kitak.mp3" },
+    { "q": "Sik", "a": "No / Not", "wrong": "Yes", "audioSrc": "audio/words/sik.mp3" },
+    { "q": "Aok", "a": "Yes", "wrong": "No / Not", "audioSrc": "audio/words/aok.mp3" },
+    { "q": "Apa", "a": "What", "wrong": "Where", "audioSrc": "audio/words/apa.mp3" },
+    { "q": "Kelak", "a": "Later", "wrong": "Now", "audioSrc": "audio/words/kelak.mp3" },
+    { "q": "Nya", "a": "That / It", "wrong": "This", "audioSrc": "audio/words/nya.mp3" }
+  ]
+}

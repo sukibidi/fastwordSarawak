@@ -1,0 +1,12 @@
+{
+  "correct": [
+    { "text": "Nang pandey kau tok!", "src": "audio/feedback/correct_1.mp3" },
+    { "text": "Uish hebat na juak", "src": "audio/feedback/correct_2.mp3" },
+    { "text": "Memang kau la orangnya!", "src": "audio/feedback/correct_3.mp3" }
+  ],
+  "wrong": [
+    { "text": "Sik study ka?", "src": "audio/feedback/wrong_1.mp3" },
+    { "text": "Sikda harapan kau tok.", "src": "audio/feedback/wrong_2.mp3" },
+    { "text": "Senang jak ya!", "src": "audio/feedback/wrong_3.mp3" }
+  ]
+}

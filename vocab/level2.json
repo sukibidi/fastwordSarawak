@@ -1,0 +1,19 @@
+{
+  "id": 2,
+  "name": "Jalan Masjid Jamek (Masja) ",
+  "setting": "Daytime",
+  "speed": 1.2,
+  "audioOnly": false,
+  "vocab": [
+    { "q": "Nektok", "a": "Now", "wrong": "Grandmother", "audioSrc": "audio/words/nektok.mp3" },
+    { "q": "Madah", "a": "Tell", "wrong": "Easy", "audioSrc": "audio/words/madah.mp3" },
+    { "q": "Kinek", "a": "Now", "wrong": "Corner", "audioSrc": "audio/words/kinek.mp3" },
+    { "q": "Lusak", "a": "The day after tomorrow", "wrong": "Rusa", "audioSrc": "audio/words/lusak.mp3" },
+    { "q": "Pusak", "a": "Cat", "wrong": "Encovies", "audioSrc": "audio/words/pusak.mp3" },
+    { "q": "Asuk", "a": "Dog", "wrong": "Shoes", "audioSrc": "audio/words/asuk.mp3" },
+    { "q": "Suka", "a": "Like", "wrong": "Comb", "audioSrc": "audio/words/suka.mp3" },
+    { "q": "Sine", "a": "Where", "wrong": "Sins", "audioSrc": "audio/words/sine.mp3" },
+    { "q": "Mukak", "a": "Open", "wrong": "Closed", "audioSrc": "audio/words/mukak.mp3" },
+    { "q": "Berolah", "a": "Naughty", "wrong": "Open Up", "audioSrc": "audio/words/berolah.mp3" }
+  ]
+}

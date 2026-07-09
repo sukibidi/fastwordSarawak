@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "name": "Jam City Samarahan (Jem-arahan)",
+  "setting": "Daytime",
+  "speed": 1.2,
+  "audioOnly": false,
+  "vocab": [
+    { "q": "Sikpat", "a": "Can not", "wrong": "Can", "audioSrc": "audio/words/sikpat.mp3" },
+    { "q": "Kelak", "a": "Later", "wrong": "Now", "audioSrc": "audio/words/kelak.mp3" },
+    { "q": "Lokek", "a": "Stingy", "wrong": "Wrong", "audioSrc": "audio/words/lokek.mp3" },
+    { "q": "Polah", "a": "Do", "wrong": "Like", "audioSrc": "audio/words/polah.mp3" },
+    { "q": "Agik", "a": "More", "wrong": "Give", "audioSrc": "audio/words/agik.mp3" },
+    { "q": "Berik", "a": "Give", "wrong": "Take", "audioSrc": "audio/words/berik.mp3" },
+    { "q": "Ambik", "a": "Take", "wrong": "Throw", "audioSrc": "audio/words/ambik.mp3" },
+    { "q": "Loba", "a": "Arrogant", "wrong": "Radish", "audioSrc": "audio/words/loba.mp3" },
+    { "q": "Nemu", "a": "Find", "wrong": "Lose", "audioSrc": "audio/words/nemu.mp3" },
+    { "q": "Tetak", "a": "Laugh", "wrong": "Beheading", "audioSrc": "audio/words/tetak.mp3" }
+  ]
+}
